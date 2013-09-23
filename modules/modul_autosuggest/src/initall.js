@@ -9,8 +9,8 @@ $(document).ready(function()
     initEvents();
 });
 
-// start after user input >= 3 chars
-var startSuggest = 1;
+// start after user input >= 2 chars
+var startSuggest = 2;
 
 /* Init basic events and effects */
 function initEvents()
@@ -22,7 +22,7 @@ function initAutoSuggest()
 {
   $('#searchparam').bind('keyup', function() { autoSuggest(); } );
   $('#searchparam').focus(function() { $('#searchparam').val(" "); } );
-  $('#searchparam').blur(function() { $('#searchparam').val("Suchbegriff eingeben"); } );
+  //$('#searchparam').blur(function() { $('#searchparam').val("Suchbegriff eingeben"); } );
   $('body').click(function() { $('#results').slideUp(); } );
 }
 

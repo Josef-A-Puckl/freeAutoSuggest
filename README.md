@@ -1,26 +1,36 @@
-// -------------------------------
-// MODUL Free Autosuggest 3.0 FOR OXID 4.6 & 4.7x AZURE (c) 2013 PREMIERELINE.DE
-// -------------------------------
+Free Autosuggest 3.1 FOR OXID AZURE (c) 2013 PREMIERELINE.DE
+==========================
+Suchvorschläge für den OXID eShop!
 
+Voraussetzungen:
 
-Released under the GNU General Public License
+	- Ab Shopversion 4.7.5: Ohne Einschränkungen funktionsfähig.
+	
+	- Shopversion 4.6.0 - 4.7.4: Nur in Verbindung mit dem kostenlosen Modul ECS_ThemeChecker: https://github.com/ecomstyle/ECS_ThemeChecker funktionsfähig.
+	
+	- Azure inkl. Childthemes und OXID Mobile Theme
+	
 
-Inhalt des Ordners freeAutoSuggest-master bitte analog zum Shoproot kopieren. 
+Installation: 
 
-Modul im Adminbereich unter Erweiterungen / Module aktivieren.
+	Inhalt des Ordners freeAutoSuggest-master bitte analog zum Shoproot kopieren. 
 
-soundex_match_function.sql ausführen (phpmyadmin).
+	Modul im Adminbereich unter Erweiterungen / Module aktivieren.
 
-cologne_phonetic_function.sql ausführen (phpmyadmin).
+	soundex_match_function.sql ausführen (phpmyadmin).
 
-Fertig.
+	cologne_phonetic_function.sql ausführen (phpmyadmin).
 
+	Fertig.	
 
-NICHT VERGESSEN:
+		
+Licensing: 
 
-BEI ÄNDERUNGEN AN DER DATENBANK VORHER STETS EIN BACKUP MACHEN !!! 
-
-
-
+	Released under the GNU General Public License
+	
 Changelog:
-17.4.2013 - Josef Andreas Puckl (info@ecomstyle.de) - Module created + New Design
+
+	17.04.2013 - Josef Andreas Puckl (info@ecomstyle.de) - Modul (alle Dateien im Modulordner) erstellt + neues Design für Azure.	
+	23.09.2013 - Josef Andreas Puckl (info@ecomstyle.de) - Unterstützung für OXID-Mobiletheme und Design für OXID Mobiletheme erstellt.	
+	
+	

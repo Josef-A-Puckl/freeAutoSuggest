@@ -14,11 +14,11 @@ $aModule = array(
     'id'           => 'modul_autosuggest',
     'title'        => 'Free AutoSuggest with Brain',
     'description'  => 'Fehlertolerante Suche mit automatischen Suchvorschl&auml;gen.',
-    'version'      => '3.0',
-    'thumbnail'    => 'modul_autosuggest.jpg',
-    'author'       => 'OXID Community and <strong style="font-size: 17px;color:#04B431;">e</strong><strong style="font-size: 16px;">ComStyle.de</strong>',
-    'email'          => 'info@ecomstyle.de',
-    'url'          => 'http://ecomstyle.de',
+    'version'      => '3.1',
+    'thumbnail'    => '',
+    'author'       => 'OXID Community',
+    'email'          => '',
+    'url'          => '',
 	 'extend' => array(
 		  'oxubase' => 'modul_autosuggest/core/autosuggest'
 	 ),

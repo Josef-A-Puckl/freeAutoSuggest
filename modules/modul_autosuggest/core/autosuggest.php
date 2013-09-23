@@ -69,7 +69,7 @@ class autoSuggest extends oxubase
         parent::render();
         $oCurr=oxConfig::getInstance()->getActShopCurrencyObject();
 
-        echo '<table><tr class="first"><td colspan="3"><span style="color:#fff;"><br>Vorschl&auml;ge f&uuml;r Ihre Suche:</span></td></tr>';
+        echo '<table><tr class="first"><td colspan="4"><span style="color:#fff;"><br>Vorschl&auml;ge f&uuml;r Ihre Suche:</span></td></tr>';
         while ($row = mysql_fetch_array($getRecord)) {
 
         $query = "select oxseourl from oxseo where oxobjectid = '" . $row['OXID'] . "' and oxlang = 0 and oxparams IN(select oxid from oxcategories)";
@@ -77,13 +77,15 @@ class autoSuggest extends oxubase
         while($zeile1 = mysql_fetch_array($result))
         { $seourl = $zeile1['oxseourl'] ;
         }
-        $picname = trim(utf8_encode($row['OXPIC1']));
+         $picname = trim(utf8_encode($row['OXPIC1']));
+         $picname = ($picname == '') ? 'nopic.jpg':$picname;
         ?>
 
         <tr class="resall">
             <td class="title"><?php echo '<a href="/' .$seourl .'">' . $row['OXTITLE'] . '</a>'; ?></td>
-            <td class="price"><?php echo number_format($row['OXPRICE'], 2, ",", "").' '.$oCurr->name; ?></td>
-            <td class="image"><?php echo '<a class="picture" href="/' .$seourl .'"><img src="'.$sShopURL.'out/pictures/master/product/1/' . $picname . '" alt="' . $row['OXTITLE'] . '" width="30" height="30">'; ?></td>
+            <td class="title artnr"><?php echo '<a href="/' .$seourl .'">' . "Artikelnr." . ' ' . $row['OXARTNUM'] . '</a>'; ?></td>
+            <td class="title price"><?php echo  '<a href="/' .$seourl .'">' . (number_format($row['OXPRICE'], 2, ",", "").' '.$oCurr->name) . '</a>'; ?></td>
+            <td class="image"><?php echo '<a class="picture" href="/' .$seourl .'"><img src="'.$sShopURL.'out/pictures/master/product/1/' . $picname . '" alt="' . $row['OXTITLE'] . '" width="50" height="50">'; ?></td>
         </tr>
 
                 <?php }
@@ -97,10 +99,10 @@ class autoSuggest extends oxubase
             for($i=1; $i<=$pages_sum; $i++)
             {
                   if ($i==$page){
-                  echo '<li class="active"><a href="' . $i . '"><span style="padding:7px 10px;border:1px solid #f2f2f2;border-radius: 2px;">' . $i . '</span></a></li>';
+                  echo '<li class="active"><a href="' . $i . '">' . $i . '</a></li>';
 				  }
 				  else {
-				  echo '<li><a href="' . $i . '"><span style="padding:7px 10px;border:1px solid #f2f2f2;border-radius: 2px;">' . $i . '</span></a></li>';
+				  echo '<li><a href="' . $i . '">' . $i . '</a></li>';
 				  }
             }
 
