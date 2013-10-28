@@ -1,8 +1,12 @@
 <?php
 // -------------------------------
-// Free Autosuggest 2.0 FOR OXID 4.7x AZURE 2013 PREMIERELINE.DE
+// Free Autosuggest 3.0 FOR OXID 4.7x AZURE 2013 PREMIERELINE.DE
 // -------------------------------
 //Released under the GNU General Public License
+
+// Aktuelle Versionen:
+// Autosuggest 3.1: Modulform durch eComStyle.de erstellt (alle Dateien sind nun im Modulordner) und neues Design.
+// Autosuggest 3.2: Erweitert durch eComStyle.de um die Suche nach Artikelnr., einige Bugfixes und ein neues Design für Azure und das Oxid Mobiletheme.
 
 class autoSuggest extends oxubase
 	{
@@ -20,12 +24,13 @@ class autoSuggest extends oxubase
 
 		$start =  ($page * $articles_pp) - $articles_pp;
 
-		$dbx = oxDb::getDb()->qstr(''.$searchq.'');
-		$getRecord_sql = $SQL_FROM.'AND '.$SQL_WHERE.' LIKE '.oxDb::getDb()->qstr('%'.$searchq.'%').' LIMIT '. $start.' , '. $articles_pp;
+		$dbx  = oxDb::getDb()->qstr(''.$searchq.'');
+		$dbx2 = oxDb::getDb()->qstr('%'.$searchq.'%');
+		$getRecord_sql = $SQL_FROM." AND (oxtitle LIKE ".$dbx2." or oxartnum LIKE ".$dbx2.") LIMIT ". $start." , ". $articles_pp;
 		mysql_query( "SET NAMES 'utf8'" ); // Umlaute ausgeben
 		$getRecord		=	mysql_query($getRecord_sql);
 
-		$getRecord_sum = $SQL_FROM.'AND '.$SQL_WHERE.' LIKE '.oxDb::getDb()->qstr('%'.$searchq.'%');
+		$getRecord_sum = $SQL_FROM." AND (oxtitle LIKE ".$dbx2."or oxartnum LIKE ".$dbx2." = 1)";
 		$getRecordsum		=	mysql_query($getRecord_sum);
 		if($getRecord) {
 		$num_rows1 = mysql_num_rows($getRecordsum);
@@ -59,8 +64,8 @@ class autoSuggest extends oxubase
 		}
 		}
 
-		if ($num_rows1 == 0 && $num_rows2 == 0 && $num_rows3 == 0) {
-		echo '<table><tr class="first"><td colspan="3"><span style="color:#fff;"><br>Keine Vorschl&auml;ge m&ouml;glich<br><br></span></td></tr>';
+        if ($num_rows1 == 0 && $num_rows2 == 0 && $num_rows3 == 0) {
+		            echo ' <table>';
                     exit;
 		}
 
@@ -85,15 +90,14 @@ class autoSuggest extends oxubase
             <td class="title"><?php echo '<a href="/' .$seourl .'">' . $row['OXTITLE'] . '</a>'; ?></td>
             <td class="title artnr"><?php echo '<a href="/' .$seourl .'">' . "Artikelnr." . ' ' . $row['OXARTNUM'] . '</a>'; ?></td>
             <td class="title price"><?php echo  '<a href="/' .$seourl .'">' . (number_format($row['OXPRICE'], 2, ",", "").' '.$oCurr->name) . '</a>'; ?></td>
-            <td class="image"><?php echo '<a class="picture" href="/' .$seourl .'"><img src="'.$sShopURL.'out/pictures/master/product/1/' . $picname . '" alt="' . $row['OXTITLE'] . '" width="50" height="50">'; ?></td>
+            <td class="image"><?php echo '<a class="picture" href="/' .$seourl .'"><img src="'.$sShopURL.'out/pictures/generated/product/1/87_87_75/' . $picname . '" alt="' . $row['OXTITLE'] . '" width="50" height="50">'; ?></td>
         </tr>
 
                 <?php }
 
                 if ($pages_sum < 2) {  echo '<tr><td class="pages" colspan="2"></td></tr>'; }
-                if ($pages_sum > 10) {  echo '<tr><td class="pages" colspan="2"><span style="color:#fff;"><br>Bitte Ihre Eingabe fortsetzen</span></td></tr>'; }
 
-        if ($pages_sum > 1 AND $pages_sum < 11) {
+        if ($pages_sum > 1) {
                 echo '<tr><td class="pages" colspan="2"><span style="color:#fff;"><br>Seiten:&nbsp;&nbsp;</span><ul class="pagination">';
 
             for($i=1; $i<=$pages_sum; $i++)

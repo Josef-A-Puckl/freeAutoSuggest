@@ -9,18 +9,23 @@
  * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License along with this program; if not, see <http://www.gnu.org/licenses/>
  */
+ 
+// Aktuelle Versionen:
+// Autosuggest 3.1: Modulform durch eComStyle.de erstellt (alle Dateien sind nun im Modulordner) und neues Design.
+// Autosuggest 3.2: Erweitert durch eComStyle.de um die Suche nach Artikelnr., einige Bugfixes und ein neues Design für Azure und das Oxid Mobiletheme.
+
 
 $aModule = array(
-    'id'           => 'modul_autosuggest',
+    'id'           => 'free_autosuggest',
     'title'        => 'Free AutoSuggest with Brain',
     'description'  => 'Fehlertolerante Suche mit automatischen Suchvorschl&auml;gen.',
-    'version'      => '3.1',
+    'version'      => '3.2',
     'thumbnail'    => '',
     'author'       => 'OXID Community',
-    'email'          => '',
+    'email'        => '',
     'url'          => '',
 	 'extend' => array(
-		  'oxubase' => 'modul_autosuggest/core/autosuggest'
+		  'oxubase' => 'autosuggest/controllers/autosuggest'
 	 ),
 	 'blocks' => array(
 		  array('template' => 'widget/header/search.tpl', 'block' => 'widget_header_search_form', 'file' => 'search.tpl'),

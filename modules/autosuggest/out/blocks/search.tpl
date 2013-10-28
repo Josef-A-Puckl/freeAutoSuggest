@@ -65,13 +65,13 @@
 
 
 
-[{oxscript include=$oViewConf->getModuleUrl('modul_autosuggest','src/initall.js') priority=10 }]
+[{oxscript include=$oViewConf->getModuleUrl('autosuggest','src/initall.js') priority=10 }]
 
 [{oxscript add=$searchScript}]
 [{if $oViewConf->getActiveTheme() != 'mobile'}]
 [{* 4 Azuretheme*}]
 
-	[{oxstyle include=$oViewConf->getModuleUrl('modul_autosuggest','src/autosuggest.css') }]
+	[{oxstyle include=$oViewConf->getModuleUrl('autosuggest','src/autosuggest.css') }]
     [{oxscript include="js/widgets/oxinnerlabel.js" priority=10 }]
     [{oxscript add="$( '#searchParam' ).oxInnerLabel();"}]
    <form class="search" action="[{ $oViewConf->getSelfActionLink() }]" method="get" name="search">
@@ -79,7 +79,7 @@
 		 	<div id="quicksearch">
 				<div id="wait">
 		   			<span class="loadimage">
-						<img src="[{ $oViewConf->getModuleUrl('modul_autosuggest','src/loading.gif')}]" width="20" alt="" >
+						<img src="[{ $oViewConf->getModuleUrl('autosuggest','src/loading.gif')}]" width="20" alt="" >
 					</span>
 				</div>
             [{ $oViewConf->getHiddenSid() }]
@@ -97,7 +97,7 @@
 [{else}]
 
 [{* 4 OXID Mobile Theme*}]
-	[{oxstyle include=$oViewConf->getModuleUrl('modul_autosuggest','src/autosuggestmobile.css') }]
+	[{oxstyle include=$oViewConf->getModuleUrl('autosuggest','src/autosuggestmobile.css') }]
     <a class="btn header-btn search-toggle" href="#">
         <i class="glyphicon-search"></i>
     </a>
@@ -106,7 +106,7 @@
     		 	<div id="quicksearch">
 				<div id="wait">
 		   			<span class="loadimage">
-						<img src="[{ $oViewConf->getModuleUrl('modul_autosuggest','src/loading.gif')}]" width="40" alt="" >
+						<img src="[{ $oViewConf->getModuleUrl('autosuggest','src/loading.gif')}]" width="40" alt="" >
 					</span>
 				</div>
 
