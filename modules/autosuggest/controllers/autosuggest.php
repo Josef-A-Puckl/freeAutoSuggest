@@ -149,7 +149,7 @@ class autoSuggest extends oxubase
         echo '</table>';
         exit; // Header-Fehler vermeiden
             } else {
-            exit;
+            parent::render();
             }
         }
     }
