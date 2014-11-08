@@ -1,46 +1,44 @@
-#results{background:#232323;position:absolute;z-index:9999;padding:0 25px;display:none;}
-#results{width:100%;top:120px;}
-@media screen and (min-width: 768px) {
-#results{width:728px;top:125px;}
+@media screen and(min-width:768px){
+#results{width:728px;top:125px}
 }
-@media screen and (min-width: 992px) {
-#results{width:940px;top:130px;}
+@media screen and(min-width:992px){
+#results{width:940px;top:130px}
 }
-@media screen and (min-width: 1200px) {
-#results{width:940px;top:135px;}
+@media screen and(min-width:1200px){
+#results{width:940px;top:135px}
 }
-#results table{width:100%;}
-#results th{font-weight:700;text-align:center;}
-#results tr{color:#ccc;border-top:1px solid #898989;border-bottom:1px solid #898989;}
-#results tr:first-child,#results tr:last-child{border:none;}
-#results tr:hover:first-child,#results tr:hover:last-child{background-color:none;}
-#results td.image{width:60px;height:60px;text-align:center;padding:5px;padding-top:5px;}
-@media screen and (max-width: 768px) {
-#results td.price{display:none;}
+@media screen and(max-width:768px){
+#results td.price{display:none}
 }
-@media screen and (max-width: 480px) {
-#results td.artnr{display:none;}
+@media screen and(max-width:480px){
+#results td.artnr{display:none}
 }
-@media screen and (max-width: 768px) {
-#results td.image{display:none;}
+@media screen and(max-width:768px){
+#results td.image{display:none}
 }
-#results td.pages{padding-top:15px;padding-bottom:5px;}
-#results td a{display:block;text-decoration:none;color:#fff;}
-#results td a:hover{}
-#results td a small{display:block;text-decoration:none;color:#fff;font-weight:400;}
-#results td{}
-#results ul{padding:0;margin:3px;}
-#results ul li{background:none repeat scroll 0 0 #6E6E6E;color:#000;float:left;font-family:helvetica,arial,sans-serif;font-size:13px;font-weight:700;margin:0 2px;padding:0;text-align:center;text-decoration:none;text-shadow:none;list-style-type:none;cursor:pointer;}
-#results ul li.active{background:none repeat scroll 0 0 #999;}
-#results ul li:hover{background:#999;}
-#results li:hover{color:#000;cursor:pointer;}
-#results td.title a{padding:23px 8px 5px 0;margin-left:7px;}
-@media screen and (max-width: 768px) {
-#results td.title a{margin-left:0;padding:15px 8px 5px 0;}
+@media screen and(max-width:768px){
+#results td.title a{margin-left:0;padding:15px 8px 5px 0}
 }
-#results td.pages span{color:#fff;float:left;}
-.resall:hover{background-color:#999;}
-#results td.cats a{padding:10px 8px 5px 0;margin-left:7px;}
-#quicksearch{position:relative;}
-#wait{position:absolute;width:100px;right:15px;top:15px;display:none;z-index:11111;}
-#results td.image img{max-width:60px;max-height:60px;}
+#results{background:#232323;position:absolute;z-index:9999;padding:0 25px;display:none}
+#results{width:100%;top:120px}
+#results table{width:100%}
+#results th{font-weight:700;text-align:center}
+#results tr{color:#ccc;border-top:1px solid #898989;border-bottom:1px solid #898989}
+#results tr:first-child,#results tr:last-child{border:none}
+#results tr:hover:first-child,#results tr:hover:last-child{background:none}
+#results td.image{width:60px;height:60px;text-align:center;padding:5px;padding-top:5px}
+#results td.pages{padding-top:15px;padding-bottom:5px}
+#results td a{display:block;text-decoration:none;color:#fff}
+#results td a:hover,#results td{}
+#results td a small{display:block;text-decoration:none;color:#fff;font-weight:400}
+#results ul{padding:0;margin:3px}
+#results ul li{background:none repeat scroll 0 0 #6E6E6E;color:#000;float:left;font:700 13px helvetica,arial,sans-serif;margin:0 2px;padding:0;text-align:center;text-decoration:none;text-shadow:none;list-style:none;cursor:pointer}
+#results ul li.active{background:none repeat scroll 0 0 #999}
+#results ul li:hover,.resall:hover{background:#999}
+#results li:hover{color:#000;cursor:pointer}
+#results td.title a{padding:23px 8px 5px 0;margin-left:7px}
+#results td.pages span{color:#fff;float:left}
+#results td.cats a{padding:10px 8px 5px 0;margin-left:7px}
+#quicksearch{position:relative}
+#wait{position:absolute;width:100px;right:15px;top:15px;display:none;z-index:11111}
+#results td.image img{max-width:60px;max-height:60px}

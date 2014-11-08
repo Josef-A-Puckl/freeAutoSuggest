@@ -8,12 +8,13 @@
 // Autosuggest 3.1: Modulform durch eComStyle.de erstellt (alle Dateien sind nun im Modulordner) und neues Design.
 // Autosuggest 3.2: Erweitert durch eComStyle.de um die Suche nach Artikelnr., einige Bugfixes und ein neues Design für Azure und das Oxid Mobiletheme.
 // Extension for Variants and some bugs fixed
+// Autosuggest 3.3: Anpasung durch eComStyle.de fuer Shopversion 4.9.
 
 class autoSuggest extends oxubase
 {
     public function render()
     {
-        $sShopURL = oxConfig::getInstance()->getConfigParam( 'sShopURL' );
+        $sShopURL = oxRegistry::getConfig()->getConfigParam( 'sShopURL' );
         $bActivateVariants = FALSE;  // set to TRUE for search in variants too
 
         if ( !$bActivateVariants )
@@ -100,7 +101,7 @@ class autoSuggest extends oxubase
         if(strlen($searchq)>0){
 
         parent::render();
-        $oCurr=oxConfig::getInstance()->getActShopCurrencyObject();
+        $oCurr=oxRegistry::getConfig()->getActShopCurrencyObject();
 
         echo '<table><tr class="first"><td colspan="4"><span style="color:#fff;"><br>Vorschl&auml;ge f&uuml;r Ihre Suche:</span></td></tr>';
         while ($row = mysql_fetch_array($getRecord)) {
